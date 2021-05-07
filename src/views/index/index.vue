@@ -1,15 +1,11 @@
 <template>
-  <div class="flex-box">
-    这是首页
-  </div>
+  <div class="flex-box">这是首页</div>
 </template>
 
 <script>
-
 export default {
-  name: 'Home',
-  components: {}
-}
+  name: "Home",
+  components: {},
+};
 </script>
-<style lang="less">
-</style>
+<style lang="scss"></style>
