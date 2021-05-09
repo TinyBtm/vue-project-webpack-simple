@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Index from "../views/index/index.vue";
 
-const draglist = () => import("../views/data/draglist.vue");
+const draglist = () => import("@/views/data/draglist.vue");
 // 解决vue-router使用push方法重复触发会报错问题
 const originalPush = VueRouter.prototype.push;
 VueRouter.prototype.push = function (location) {

@@ -1,13 +1,11 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// eslint-disable-next-line import/no-extraneous-dependencies
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const { resolve } = require("./utils");
 
 module.exports = {
   entry: resolve("src/main.js"),
   resolve: {
-    extensions: [".vue", ".js", ".scss", ".css"],
+    extensions: [".vue", ".js"],
     alias: {
       "@": resolve("src"),
     },
@@ -57,7 +55,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
+        test: /\.(woff|eot|ttf)\??.*$/,
         use: [
           {
             loader: "url-loader",

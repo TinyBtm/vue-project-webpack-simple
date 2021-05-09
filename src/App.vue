@@ -50,6 +50,8 @@ export default {
 };
 </script>
 <style lang="scss">
+@import url("~@/assets/css/main.scss");
+
 .wrap {
   position: absolute;
   display: flex;
