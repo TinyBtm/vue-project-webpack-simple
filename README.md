@@ -14,6 +14,7 @@ npm run build:prod --生产环境包
 |-- dist  --测试包
 |-- prod  --生产包
 |-- public --公共样本
+|-- server  --node本地服务
 |-- src  --项目开发主路径
 |-- |-- assets --静态文件
 |-- |-- |-- css[style] --样式文件
