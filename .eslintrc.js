@@ -1,4 +1,3 @@
-const env = process.env.NODE_ENV;
 module.exports = {
   env: {
     browser: true,
@@ -22,7 +21,7 @@ module.exports = {
     "import/no-named-as-default-member": "off",
     "import/no-unresolved": "off",
     "import/extensions": "off",
-    "import/no-extraneous-dependencies": [2, { devDependencies: true }],
+    "import/no-extraneous-dependencies": "off",
     "no-param-reassign": "off",
     "no-unused-expressions": "off",
     "no-unused-vars": [
@@ -32,8 +31,9 @@ module.exports = {
     // 要求或禁止命名的 function 表达式 (func-names)
     "func-names": ["error", "never"],
     "prefer-destructuring": "off",
-    "no-console": env === "development" ? "off" : "error",
-    "no-debugger": env === "development" ? "off" : "error",
+    "no-console": "off",
+    "no-debugger": "off",
     "no-loop-func": "off",
+    "no-var": "off",
   },
 };

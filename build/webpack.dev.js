@@ -36,12 +36,13 @@ module.exports = () => {
               errors: true,
             },
             historyApiFallback: true,
-            // proxy: {
-            //   "/api": {
-            //     target: "http://127.0.0.1:10600",
-            //     changeOrigin: true,
-            //   },
-            // },
+            proxy: {
+              "/api": {
+                target: "http://192.168.0.211:3000",
+                changeOrigin: true,
+                pathRewrite: { "^/api": "" },
+              },
+            },
           },
           plugins: [
             new webpack.DefinePlugin({
