@@ -1,0 +1,7 @@
+# 设置忽略文件夹
+build
+prod
+node_modules
+
+# 设置忽略文件类型
+*.html

@@ -1,17 +1,7 @@
 <template>
   <div class="flex-box">
-    <ul
-      @dragstart="fOnDragStart"
-      @dragover="fOnDragOver"
-      @dragend="fOnDragEnd"
-      ref="parentNode"
-    >
-      <li
-        v-for="(item, index) in data"
-        :key="index"
-        class="item"
-        draggable="true"
-      >
+    <ul @dragstart="fOnDragStart" @dragover="fOnDragOver" @dragend="fOnDragEnd" ref="parentNode">
+      <li v-for="(item, index) in data" :key="index" class="item" draggable="true">
         {{ item }}
       </li>
     </ul>

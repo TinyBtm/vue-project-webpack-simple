@@ -51,6 +51,7 @@
     "stylus-loader": "^5.0.0",
     "url-loader": "^4.1.1",
     "vue-loader": "^15.9.6",
+    "vue-resource": "^1.5.2",
     "vue-template-compiler": "^2.6.12",
     "webpack": "^5.36.2",
     "webpack-cli": "^4.6.0",

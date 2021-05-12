@@ -53,15 +53,11 @@ class AjaxRequest {
           return res;
         }
         if (res.selfDefineDialog === "0") {
-          MessageBox.alert(
-            `<p style="color: #FF2741">${resMsg}</p>`,
-            "系统提示",
-            {
-              confirmButtonText: "知道了",
-              dangerouslyUseHTMLString: true,
-              callback: () => {},
-            }
-          );
+          MessageBox.alert(`<p style="color: #FF2741">${resMsg}</p>`, "系统提示", {
+            confirmButtonText: "知道了",
+            dangerouslyUseHTMLString: true,
+            callback: () => {},
+          });
           return Promise.reject(new Error(resMsg || "error"));
         }
       },

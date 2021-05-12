@@ -37,11 +37,11 @@ module.exports = () => {
             },
             historyApiFallback: true,
             proxy: {
-              "/api": {
-                target: "http://192.168.0.211:3000",
+              '/api/*': {
+                target: 'http://localhost:8666',//跨域要访问的地址及端口
                 changeOrigin: true,
-                pathRewrite: { "^/api": "" },
-              },
+                secure: false,
+              }
             },
           },
           plugins: [
