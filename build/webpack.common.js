@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const { resolve } = require("./utils");
 
@@ -69,5 +70,16 @@ module.exports = {
       },
     ],
   },
-  plugins: [new VueLoaderPlugin()],
+  plugins: [
+    new VueLoaderPlugin(),
+    new HtmlWebpackPlugin({
+      filename: "index.html",
+      title: "vue-simple",
+      favicon: resolve("public/favicon.ico"),
+      hash: true,
+      inject: true,
+      chunks: ["runtime", "vendors", "common", "main"],
+      template: resolve("public/index.html"),
+    }),
+  ],
 };

@@ -1,6 +1,5 @@
 const webpack = require("webpack");
 const { merge } = require("webpack-merge");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 const portfinder = require("portfinder");
@@ -36,13 +35,13 @@ module.exports = () => {
               errors: true,
             },
             historyApiFallback: true,
-            proxy: {
-              '/api/*': {
-                target: 'http://localhost:8666',//跨域要访问的地址及端口
+            /*proxy: {
+              "/api": {
+                target: "http://192.168.0.211:5210",
                 changeOrigin: true,
-                secure: false,
-              }
-            },
+                pathRewrite: { "^/api": "" },
+              },
+            },*/
           },
           plugins: [
             new webpack.DefinePlugin({
@@ -51,14 +50,6 @@ module.exports = () => {
               "proccess.env.NODE_ENV": "development",
             }),
             new webpack.HotModuleReplacementPlugin(),
-            new HtmlWebpackPlugin({
-              template: resolve("public/index.html"),
-              title: "vue-simple",
-              filename: "index.html",
-              inject: true,
-              // favicon: resolve('public/favicon.ico')
-              chunks: ["runtime", "vendors", "common", "main"],
-            }),
             new CleanWebpackPlugin({
               cleanOnceBeforeBuildPatterns: ["**/*", "dist"],
             }),

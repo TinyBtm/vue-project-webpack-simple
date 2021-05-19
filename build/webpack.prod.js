@@ -1,6 +1,5 @@
 const webpack = require("webpack");
 const { merge } = require("webpack-merge");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { resolve } = require("./utils");
@@ -44,14 +43,6 @@ module.exports = merge(WebpackCommon, {
       __VUE_OPTIONS_API__: false,
       __VUE_PROD_DEVTOOLS__: false,
       "proccess.env.NODE_ENV": "production",
-    }),
-    new HtmlWebpackPlugin({
-      title: "vue-simple",
-      template: resolve("public/index.html"),
-      filename: "index.html",
-      hash: true,
-      inject: "body",
-      chunks: ["runtime", "vendors", "common", "main"],
     }),
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ["**/*", "prod"],
